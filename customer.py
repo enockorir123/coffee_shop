@@ -41,7 +41,7 @@ class Customer:
         return Order(self, coffee, price)
 
     @classmethod
-    def most_aficionado(cls, coffee):
+    def most_aficionado(cls, coffee: Coffee):
         """
         Return the Customer who has spent the most on the given coffee.
         If no orders for that coffee, return None.

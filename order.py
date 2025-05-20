@@ -3,9 +3,13 @@ from customer import Customer
 from coffee import Coffee
 
 class Order:
+    """
+    Represents a single coffee order by a customer.
+    """
     _all_orders = []
 
     def __init__(self, customer: Customer, coffee: Coffee, price: float):
+        # use setters for validation
         self.customer = customer
         self.coffee = coffee
         self.price = price
