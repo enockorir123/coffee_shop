@@ -1,35 +1,45 @@
 
-
 from customer import Customer
 from coffee import Coffee
 
 class Order:
-    """
-    Represents a single coffee order by a customer.
-    """
     _all_orders = []
 
     def __init__(self, customer: Customer, coffee: Coffee, price: float):
-        # TODO: validate inputs and set attributes
-        #       then append self to Order._all_orders
-        pass
+        self.customer = customer
+        self.coffee = coffee
+        self.price = price
+        Order._all_orders.append(self)
 
     @property
     def customer(self) -> Customer:
-        # TODO: return the Customer instance
-        pass
+        return self._customer
+
+    @customer.setter
+    def customer(self, value: Customer):
+        if isinstance(value, Customer):
+            self._customer = value
+        else:
+            raise TypeError("customer must be an instance of Customer class.")
 
     @property
     def coffee(self) -> Coffee:
-        # TODO: return the Coffee instance
-        pass
+        return self._coffee
+
+    @coffee.setter
+    def coffee(self, value: Coffee):
+        if isinstance(value, Coffee):
+            self._coffee = value
+        else:
+            raise TypeError("coffee must be an instance of Coffee class.")
 
     @property
     def price(self) -> float:
-        # TODO: return the price
-        pass
+        return self._price
 
     @price.setter
     def price(self, value: float):
-        # TODO: validate and set price
-        pass
+        if isinstance(value, float) and 1.0 <= value <= 10.0:
+            self._price = value
+        else:
+            raise ValueError("Price must be a float between 1.0 and 10.0.")
