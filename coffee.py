@@ -3,8 +3,13 @@ from order import Order
 from customer import Customer
 
 class Coffee:
+    """
+    Represents a coffee product in the shop.
+    """
+
     def __init__(self, name: str):
-        self.name = name  # validated in setter
+        # validated via setter
+        self.name = name
 
     @property
     def name(self) -> str:
