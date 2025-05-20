@@ -1,15 +1,10 @@
-
-from order import Order
-from customer import Customer
-
 class Coffee:
     """
     Represents a coffee product in the shop.
     """
 
     def __init__(self, name: str):
-        # validated via setter
-        self.name = name
+        self.name = name  # validated via setter
 
     @property
     def name(self) -> str:
@@ -23,6 +18,7 @@ class Coffee:
             raise ValueError("Coffee name must be a string with at least 3 characters.")
 
     def orders(self):
+        from order import Order
         """
         Return a list of Order instances for this coffee.
         """
