@@ -1,7 +1,6 @@
 class Coffee:
-    """
-    Represents a coffee product in the shop.
-    """
+ 
+   #Represents a coffee product in the shop.
 
     def __init__(self, name: str):
         self.name = name  # validated via setter
@@ -19,27 +18,19 @@ class Coffee:
 
     def orders(self):
         from order import Order
-        """
-        Return a list of Order instances for this coffee.
-        """
+       #Return a list of Order instances for this coffee.
         return [order for order in Order._all_orders if order.coffee is self]
 
     def customers(self):
-        """
-        Return a unique list of Customer instances who have ordered this coffee.
-        """
+       #Return a unique list of Customer instances who have ordered this coffee.
         return list({order.customer for order in self.orders()})
 
     def num_orders(self) -> int:
-        """
-        Total times this coffee has been ordered.
-        """
+       #Total times this coffee has been ordered.
         return len(self.orders())
 
     def average_price(self) -> float:
-        """
-        Average price paid for this coffee.
-        """
+       # Average price paid for this coffee.
         orders = self.orders()
         if not orders:
             return 0.0
